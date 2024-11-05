@@ -1,0 +1,126 @@
+/* styles.css */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #343a40;
+}
+
+.top-bar {
+    padding: 10px;
+    background-color: #000000; /* Cor de fundo da top-bar */
+}
+/* Navbar */
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-text {
+    color: black;
+}
+
+.custom-button {
+    background-color: #6b1616; /* Cor de fundo */
+    color: rgb(255, 255, 255); /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Arredonda os cantos */
+    padding: 10px 20px; /* Espaçamento interno (vertical, horizontal) */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+  }
+  
+  .custom-button:hover {
+    background-color: #2b0a0a; /* Cor de fundo ao passar o mouse */
+  }
+  
+  .custom-button:active {
+    background-color: #2b0a0a; /* Cor de fundo ao clicar */
+  }
+
+
+
+.profilepic {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    transition: filter 0.3s ease;
+}
+
+.profilepic:hover {
+    filter: brightness(70%); /* Escurece a imagem para 70% do brilho original */
+}
+
+.profile-container {
+    display: flex; /* Usar flexbox para alinhar elementos */
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center; /* Alinha verticalmente os itens */
+    margin-right: 10px; /* Espaçamento à direita */
+}
+
+.profile-info {
+    display: flex; /* Usar flexbox para alinhar elementos */
+    align-items: center; /* Alinha verticalmente os itens */
+    margin-right: 10px; /* Espaçamento à direita */
+    margin-left: 10px;
+}
+
+/* Formulário de upload de imagem */
+#profile-pic-form {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+/* Estilo do botão de upload */
+#file-input {
+    display: none; /* Esconde o input file */
+}
+
+.logged-in-text {
+    margin-left: 10px; /* Espaçamento à esquerda do texto */
+}
+
+/* Ajuste o tamanho do botão se necessário */
+.btn-primary {
+    background-color: rgb(83, 6, 6);
+    margin-top: 5px; /* Espaçamento acima do botão */
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+}
+
+/* Carousel */
+.carousel-inner img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustando a altura das imagens do carrossel */
+.carousel-item {
+    height: 500px; /* Altura fixa para o carrossel */
+}
+
+.carousel-item img {
+    object-fit: cover; /* Cobre o espaço do item */
+    height: 100%;
+}
+
+/* Estilo do botão de controle do carrossel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 255, 85, 0.5); /* Cor de fundo para visibilidade */
+    border-radius: 50%; /* Botões arredondados */
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 255, 85, 0.5); /* Escurece ao passar o mouse */
+}

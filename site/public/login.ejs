@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/styleslogin.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Login</h1>
+    <br>
+    <form action="/login" method="post">
+      <label for="username">Usuário:</label>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password"><br>
+      <input type="submit" value="acessar"><br>
+    </form>
+    <p>Esqueceu sua senha? <a href="#" id="forgot-password">Clique aqui</a></p>
+    <br>
+    <p>Não tem conta? <a href="#" id="create-account">Registrar</a></p>
+  </div>
+
+  <div class="modal" id="forgot-password-modal">
+    <div class="modal-content">
+      <h2>Esqueci minha Senha</h2><br>
+      <span class="close">&times;</span>
+      <form action="/forgot-password" method="post">
+        <label for="email">Insira seu email:</label>
+        <input type="email" id="email" name="email" placeholder="example@example.com"><br><br>
+        <p>Enviar reset link para seu email.</p>
+        <br>
+        <input type="submit" value="Enviar reset link">
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="create-account-modal">
+    <div class="modal-content">
+      <h2>Criar Conta</h2>
+      <br>
+      <span class="close">&times;</span>
+      <form action="/create-account" method=post>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" placeholder="Insira o usuário"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@example.com"><br><br>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" placeholder="Insira um senha forte"><br><br>
+        <input type="submit" value="Create account">
+      </form>
+    </div>
+  </div>
+
+  <script src="/scripts/scriptlogin.js"></script>
+</body>
+
+</html>
