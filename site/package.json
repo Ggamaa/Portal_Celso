@@ -15,11 +15,12 @@
     "bootstrap": "^5.3.3",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
-    "express-session": "^1.18.0",
+    "express-session": "^1.18.1",
     "multer": "^1.4.5-lts.1",
-    "mysql2": "^3.11.3",
+    "mysql2": "^3.11.4",
     "node": "^22.8.0",
     "node.js": "^0.0.1-security",
-    "nodemailer": "^6.9.15"
+    "nodemailer": "^6.9.16",
+    "path": "^0.12.7"
   }
 }
