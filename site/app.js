@@ -50,8 +50,13 @@ db.connect((err) => {
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
+
 app.get('/', (req, res) => {
   res.redirect('/index');
+});
+
+app.get('/ir-blog', (req, res) => {
+  res.redirect('/inde')
 });
 
 app.post('/ir-login', (req, res) => {
