@@ -20,10 +20,10 @@ app.use(session({
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 587,
-  secure: false, 
+  secure: false,
   auth: {
     user: 'seu_email@gmail.com',
-    pass: 'sua_senha' 
+    pass: 'sua_senha'
   }
 });
 
@@ -35,7 +35,7 @@ app.set('views', path.join(__dirname, 'public'));
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '1234',
+  password: 'cimatec',
   database: 'sistema_login',
   insecureAuth: true
 });
@@ -125,7 +125,7 @@ app.post('/forgot-password', (req, res) => {
       const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 587,
-        secure: false, 
+        secure: false,
         auth: {
           user: 'testador192@gmail.com',
           pass: 'aenxvpdisacbajib'
@@ -211,7 +211,7 @@ app.post('/login', (req, res) => {
       `);
       }
 
-     
+
       req.session.usuario = user;
       res.redirect('/tela');
     });
@@ -228,13 +228,13 @@ function getUserById(id, callback) {
     if (result.length === 0) {
       return callback(new Error('Usuário não encontrado'));
     }
-    callback(null, result[0]); 
+    callback(null, result[0]);
   });
 };
 
 
 app.get('/tela', (req, res) => {
- 
+
   if (!req.session || !req.session.usuario) {
     return res.status(401).send(` <script>
         alert('usuário não autenticado')                
@@ -261,10 +261,10 @@ app.get('/tela', (req, res) => {
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/'); 
+    cb(null, 'uploads/');
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname)); 
+    cb(null, Date.now() + path.extname(file.originalname));
   }
 });
 
@@ -280,7 +280,7 @@ app.post('/upload', upload.single('profilePic'), (req, res) => {
     `);
   }
 
-  const imageUrl = `/uploads/${req.file.filename}`; 
+  const imageUrl = `/uploads/${req.file.filename}`;
   const userId = req.session.usuario ? req.session.usuario.id : null;
 
   if (!userId) {
@@ -293,6 +293,7 @@ app.post('/upload', upload.single('profilePic'), (req, res) => {
   }
 
   const query = 'UPDATE usuarios SET profile_pic = ? WHERE id = ?';
+
   db.query(query, [imageUrl, userId], (err, result) => {
     if (err) {
       return res.status(500).send('Erro ao atualizar imagem de perfil: ' + err.message);
@@ -322,7 +323,7 @@ function handleUpload() {
     .then(data => {
       const profilePicElement = document.getElementById('profilePic');
       profilePicElement.src = data.imageUrl + '?timestamp=' + new Date().getTime();
-      
+
     })
     .catch(error => {
       console.error('Erro ao fazer upload:', error);
@@ -332,7 +333,7 @@ function handleUpload() {
 app.post('/api/logout', (req, res) => {
 
   if (req.session.usuario) {
-   
+
     req.session.destroy(err => {
       if (err) {
         return res.status(500).send({ error: 'Erro ao sair.' });
