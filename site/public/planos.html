@@ -1,90 +1,493 @@
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+  }
+
+  :root {
+      -ms-scrollbar-track-color: black;
+      --verde-escuro: #14424b;
+      --laranja: #37ffac;
+      --degrade-bnt: linear-gradient(#fe9611, #ff5c00);
+      --color-p: #a1a1a1;
+      --color-p2: #868585;
+
+  }
+
+  .background-verde {
+      background-color: #71da9d;
+  }
+
+  .container {
+      max-width: 1400px;
+      padding: 0 5%;
+      margin: 0 auto;
+  }
+
+  section,
+  footer {
+      padding: 2.7rem 0;
+  }
+
+  .btn-gradiente {
+      padding: 10px 25px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      background-image: var(--degrade-bnt);
+  }
+
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+  }
+
+  .start a {
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+  }
+
+  .ul {
+      display: flex;
+      align-items: center;
+  }
+
+  .ul li {
+      margin: 0 35px;
+      font-size: 15px;
+
+  }
+
+  .ul li a {
+      color: white;
+
+  }
+
+  main .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 30px;
+  }
+
+  .main-text {
+      width: 50%;
+      color: white;
+  }
+
+  .main-text h1 {
+      font-size: 3.5rem;
+  }
+
+  .main-text div {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+  }
+
+  .main-img {
+      width: 50%;
+  }
+
+  .main-img img {
+      width: 100%;
+  }
+
+  .menu-icon {
+      display: none;
+      position: relative;
+      z-index: 10;
+
+  }
+
+  .resultados {
+      background: #95eea1;
+  }
+
+  .resultados .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .resultados .resultados-text {
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 600;
+      width: 50%;
+  }
+
+  .resultados .resultados-numero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+  }
+
+  .resultados .resultados-numero p {
+      text-align: center;
+      margin: 0 30px;
+      font-size: 20px;
+  }
+
+  .diferencias .card {
+      width: 30%;
+      cursor: pointer;
+      padding: 30px;
+      border-radius: 15px;
+      transition: 0.3s;
+  }
+
+  .diferencias .card .titulo {
+      margin: 13px 0;
+      font-weight: 600;
+  }
+
+  .diferencias .card:hover {
+      background-color: #71da9d;
+
+  }
+
+  .diferencias .card img {
+      width: 60px;
+  }
+
+  .pc .container {
+      display: flex;
+      align-items: center;
+  }
+
+  .pc .pc-img {
+      width: 50%;
+  }
+
+  .pc .pc-img img {
+      width: 100%;
+      border-radius: 10px;
+  }
+
+  .pc .pc-text {
+      width: 50%;
+      padding-left: 90px;
+  }
+
+  .pc .pc-text h2 {
+      font-size: 2.5em;
+  }
+
+  .pc .pc-text p {
+      margin: 20px 0;
+      color: #868585;
+  }
+
+  .pc .pc-text p b {
+      color: black;
+      font-size: 25px;
+  }
+
+  /* Estilos para o container principal */
+  .melhores-profissional {
+      padding: 40px;
+      background-color: #f9f9f9;
+  }
+
+  .container {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+  }
+
+  /* Estilo para o texto "Escolha o seu melhor" */
+  .laranja {
+      font-size: 20px;
+      color: #ff6600;
+      margin-bottom: 10px;
+  }
+
+  /* Estilo para o título "Nossos Profissionais" */
+  h2 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 30px;
+  }
+
+  /* Estilos para os cards */
+  .cards {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+  }
+
+  .card-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+  }
+
+  .card-item:hover {
+      transform: scale(1.05);
+  }
+
+  .profissional-imagem {
+      width: 100px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+  }
+
+  .profissao {
+      font-size: 18px;
+      color: #333;
+      font-weight: bold;
+      margin: 10px 0;
+  }
+
+  .nome {
+      font-size: 20px;
+      color: #444;
+      margin: 5px 0;
+  }
+
+  .card-item p {
+      font-size: 14px;
+      color: #666;
+  }
+  .verif-img{
+  padding-left: 100px;
+  }
+  /* ----------------------------------------------- */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+body .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px 0;
+}
+
+body .container .card {
+  position: relative;
+  min-width: 320px;
+  height: 440px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+  transition: 0.5s;
+}
+
+body .container .card:nth-child(1) .box .content a {
+  background: #2196f3;
+}
+
+body .container .card:nth-child(2) .box .content a {
+  background: #e91e63;
+}
+
+body .container .card:nth-child(3) .box .content a {
+  background: #23c186;
+}
+
+body .container .card .box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #2a2b2f;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+body .container .card .box:hover {
+  transform: translateY(-50px);
+}
+
+body .container .card .box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+body .container .card .box .content {
+  padding: 20px;
+  text-align: center;
+}
+
+body .container .card .box .content h2 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+body .container .card .box .content h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  z-index: 1;
+  transition: 0.5s;
+  margin-bottom: 15px;
+}
+
+body .container .card .box .content p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+body .container .card .box .content a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  background: black;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  margin-top: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+body .container .card .box .content a:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  background: #fff;
+  color: #000;
+}
+</style>
+
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planos</title>
-    <link rel="stylesheet" href="../public/css/stylesplanos.css" />
-  </head>
-  <body>
-    <div class="background-verde">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  
+  <div class="background-verde">
       <header>
-        <div class="header">
-          <nav>
-            <div class="logo">
-              <a href="index.html">StartCoding</a>
-            </div>
-            <ul class="ul">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Sobre</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contato</a></li>
-              <li>
-                <a href="#"><button class="btn-gradiente">Começar</button></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+          <div class="container">
+              <nav>
+                  <div class="start">
+                      <a href="index.html">StartCoding</a>
+                  </div>
+                  <ul class="ul">
+                      <li><a href="#"> Home</a></li>
+                      <li><a href="#"> sobre</a></li>
+                      <li><a href="#"> Blog</a></li>
+                      <li><a href="#"> contato</a></li>
+                      <li><a href="#">
+                              <form action="/ir-login" method="post"><button class="btn-gradiente">Começar</button>
+                              </form>
+                          </a></li>
+                  </ul>
+              </nav>
+          </div>
       </header>
-
       <main>
-        <div class="container">
-          <h2>Conheça nossos planos</h2>
-        </div>
-
-        <div class="container planos">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h3>Mensal</h3>
-                <p>Acesso a todos os cursos e conteúdos</p>
-                <p>Material de apoio exclusivo</p>
-                <p>Suporte técnico online</p>
-                <a href="#">R$ 99,90</a>
+        <main>
+          <div class="container">
+            <h2>Conheça nossos planos</h2>
+          </div>
+  
+          <div class="container planos">
+            <div class="card">
+              <div class="box">
+                <div class="content">
+                  <h3>Mensal</h3>
+                  <p>Acesso a todos os cursos e conteúdos</p>
+                  <p>Material de apoio exclusivo</p>
+                  <p>Suporte técnico online</p>
+                  <a href="#">R$ 99,90</a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="card">
+              <div class="box">
+                <div class="content">
+                  <h3>Trimestral</h3>
+                  <p>Acesso a todos os cursos e conteúdos</p>
+                  <p>Material de apoio exclusivo</p>
+                  <p>Suporte técnico online</p>
+                  <p>Desconto de 10% sobre o valor total</p>
+                  <a href="#">R$ 259,90</a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="card">
+              <div class="box">
+                <div class="content">
+                  <h3>Semestral</h3>
+                  <p>Acesso a todos os cursos e conteúdos</p>
+                  <p>Material de apoio exclusivo</p>
+                  <p>Suporte técnico online</p>
+                  <p>Desconto de 20%</p>
+                  <a href="#">R$ 459,90</a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="card">
+              <div class="box">
+                <div class="content">
+                  <h3>Anual</h3>
+                  <p>Acesso a todos os cursos e conteúdos</p>
+                  <p>Material de apoio exclusivo</p>
+                  <p>Suporte técnico online</p>
+                  <p>Desconto de 35% sobre o valor total</p>
+                  <a href="#">R$ 779,92</a>
+                </div>
               </div>
             </div>
           </div>
+        </main>
 
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h3>Trimestral</h3>
-                <p>Acesso a todos os cursos e conteúdos</p>
-                <p>Material de apoio exclusivo</p>
-                <p>Suporte técnico online</p>
-                <p>Desconto de 10% sobre o valor total</p>
-                <a href="#">R$ 259,90</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h3>Semestral</h3>
-                <p>Acesso a todos os cursos e conteúdos</p>
-                <p>Material de apoio exclusivo</p>
-                <p>Suporte técnico online</p>
-                <p>Desconto de 20%</p>
-                <a href="#">R$ 459,90</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h3>Anual</h3>
-                <p>Acesso a todos os cursos e conteúdos</p>
-                <p>Material de apoio exclusivo</p>
-                <p>Suporte técnico online</p>
-                <p>Desconto de 35% sobre o valor total</p>
-                <a href="#">R$ 779,92</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </main>
-    </div>
-  </body>
+          
+</body>
+
 </html>
