@@ -1,0 +1,59 @@
+/* Container principal */
+header{
+    display: flex;
+}
+.container {
+    width: 80%;
+    max-width: 1400px;
+    padding: 0 5%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo alinhado à esquerda */
+.logo a {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-right: auto;
+}
+
+/* Fundo verde e ajuste de padding */
+.background-verde {
+    background-color: #71da9d;
+    padding: 15px 0;
+}
+
+/* Centralizando e espaçando os itens do menu */
+nav .ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px; /* Ajuste de espaçamento entre os itens */
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+nav .ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Botão gradiente alinhado à direita */
+.btn-gradiente {
+    padding: 10px 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(#fe9611, #ff5c00);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 20px; /* Espaçamento entre o botão e o menu */
+}
