@@ -48,18 +48,18 @@ db.connect((err) => {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 app.get('/', (req, res) => {
-  res.redirect('/telaprincipal');
+  res.redirect('/index');
 });
 
 app.post('/ir-login', (req, res) => {
   res.redirect('/login')
 });
 
-app.get('/telaprincipal', (req, res) => {
-  res.render("telaprincipal");
+app.get('/index', (req, res) => {
+  res.render("index");
 });
 
 app.get('/login', (req, res) => {
