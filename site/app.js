@@ -35,7 +35,7 @@ app.set('views', path.join(__dirname, 'public'));
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'cimatec',
+  password: '1234',
   database: 'sistema_login',
   insecureAuth: true
 });
